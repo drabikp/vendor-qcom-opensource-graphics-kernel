@@ -15,3 +15,6 @@ clean:
 
 %:
 	$(MAKE) -C $(KERNEL_SRC) M=$(M) $@ $(KBUILD_OPTIONS)
+
+# ---- arcfox kernel.mk port ----
+KBUILD_OPTIONS += KBUILD_EXTRA_SYMBOLS="$(OUT_DIR)/../sm8635-modules/qcom/opensource/mm-drivers/hw_fence/Module.symvers $(OUT_DIR)/../sm8635-modules/qcom/opensource/mm-drivers/sync_fence/Module.symvers"
